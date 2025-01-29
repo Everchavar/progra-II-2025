@@ -41,20 +41,49 @@
         android:text="Respuesta:?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+
+    <RadioGroup
+        android:id="@+id/rgOpciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="200dp">
+
+        <RadioButton
+            android:id="@+id/optSuma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Suma" />
+
+        <RadioButton
+            android:id="@+id/optResta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resta" />
+
+        <RadioButton
+            android:id="@+id/optMultiplicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Multiplicacion" />
+
+        <RadioButton
+            android:id="@+id/optDivision"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Division" />
+
+
+    </RadioGroup>
+
     <Button
         android:id="@+id/btncalcular"
-        android:layout_marginTop="220dp"
-        android:text="Calcular"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-
-
-
-
-
-
-
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:text="Calcular" />
 
 
 </RelativeLayout>
