@@ -47,8 +47,8 @@
         android:id="@+id/rgOpciones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="240dp"
-        android:layout_marginTop="200dp">
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="270dp">
 
         <RadioButton
             android:id="@+id/optSuma"
@@ -75,6 +75,36 @@
             android:layout_height="wrap_content"
             android:text="Division" />
 
+        <RadioButton
+            android:id="@+id/optFactorial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Factorial" />
+
+        <RadioButton
+            android:id="@+id/optexponenciacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exponenciacion" />
+
+        <RadioButton
+            android:id="@+id/optraiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Raiz" />
+
+        <RadioButton
+            android:id="@+id/optcubica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cubica" />
+
+        <RadioButton
+            android:id="@+id/optporcentaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Porcentaje" />
+
 
     </RadioGroup>
 
@@ -82,7 +112,7 @@
         android:id="@+id/btncalcular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="230dp"
         android:text="Calcular" />
 
 
