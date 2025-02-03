@@ -41,72 +41,15 @@
         android:text="Respuesta:?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <Spinner
+        android:id="@+id/spnOpciones"
+        android:layout_below="@id/txtNum2"
+        android:entries="@array/opciones"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
-
-    <RadioGroup
-        android:id="@+id/rgOpciones"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="250dp"
-        android:layout_marginTop="270dp">
-
-        <RadioButton
-            android:id="@+id/optSuma"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="Suma" />
-
-        <RadioButton
-            android:id="@+id/optResta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Resta" />
-
-        <RadioButton
-            android:id="@+id/optMultiplicacion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Multiplicacion" />
-
-        <RadioButton
-            android:id="@+id/optDivision"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Division" />
-
-        <RadioButton
-            android:id="@+id/optFactorial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Factorial" />
-
-        <RadioButton
-            android:id="@+id/optexponenciacion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Exponenciacion" />
-
-        <RadioButton
-            android:id="@+id/optraiz"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Raiz" />
-
-        <RadioButton
-            android:id="@+id/optcubica"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cubica" />
-
-        <RadioButton
-            android:id="@+id/optporcentaje"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Porcentaje" />
-
-
-    </RadioGroup>
 
     <Button
         android:id="@+id/btncalcular"

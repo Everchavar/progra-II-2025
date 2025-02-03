@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -17,8 +18,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
     Button btn;
     TextView tempVal;
-    RadioGroup rgb;
-    RadioButton opt;
+    Spinner spn;
     EditText num1, num2;
 
     @Override
@@ -28,19 +28,8 @@ public class MainActivity extends AppCompatActivity {
         btn = findViewById(R.id.btncalcular);
         num1 = findViewById(R.id.txtNum1);
         num2 = findViewById(R.id.txtNum2);
-        rgb = findViewById(R.id.rgOpciones);
+        spn = findViewById(R.id.spnOpciones);
 
-        rgb.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.optraiz|| checkedId == R.id.optFactorial || checkedId == R.id.optcubica) {
-                    num2.setText("");
-                    num2.setEnabled(false);
-                } else {
-                    num2.setEnabled(true);
-                }
-            }
-        });
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,54 +38,22 @@ public class MainActivity extends AppCompatActivity {
                 tempVal = findViewById(R.id.txtNum2);
                 double num2 = tempVal.isEnabled() ? Double.parseDouble(tempVal.getText().toString()) : 0;
                 double respuesta = 0.0;
+                spn = findViewById(R.id.spnOpciones);
+                switch (spn.getSelectedItemPosition()){
+                    case 0:
+                        respuesta = num1 + num2;
+                        break;
+                    case 1:
+                        respuesta = num1 - num2;
+                        break;
+                    case 2:
+                        respuesta = num1 * num2;
+                        break;
+                    case 3:
+                        respuesta = num1 / num2;
+                        break;
+                }
 
-                opt = findViewById(R.id.optSuma);
-                if (opt.isChecked()) {
-                    respuesta = num1 + num2;
-                }
-                opt = findViewById(R.id.optResta);
-                if (opt.isChecked()) {
-                    respuesta = num1 - num2;
-                }
-                opt = findViewById(R.id.optMultiplicacion);
-                if (opt.isChecked()) {
-                    respuesta = num1 * num2;
-                }
-                opt = findViewById(R.id.optDivision);
-                if (opt.isChecked()) {
-                    respuesta = num1 / num2;
-                }
-                opt = findViewById(R.id.optFactorial);
-                if (opt.isChecked()) {
-                    respuesta = 1;
-                    for (int i = 2; i <= num1; i++){
-                        respuesta *= i;
-                    }
-                }
-                opt = findViewById(R.id.optexponenciacion);
-                if (opt.isChecked()) {
-                    respuesta = Math.pow(num1, num2);
-                }
-                opt = findViewById(R.id.optraiz);
-                if (opt.isChecked()) {
-                    if (num1 >= 0) {
-                        respuesta = Math.sqrt(num1);
-                    } else {
-                        respuesta = 0;
-                    }
-                }
-                opt = findViewById(R.id.optcubica);
-                if (opt.isChecked()) {
-                    respuesta = Math.pow(num1, 3);
-                }
-                opt = findViewById(R.id.optporcentaje);
-                if (opt.isChecked()) {
-                    if (num2 == 0) {
-                        respuesta = num1 / 100.0;  // Si num2 es 0, se realiza la operación num1 / 100
-                    } else {
-                        respuesta = (num1 * num2) / 100.0;  // Si num2 es mayor que 0, se realiza la operación (num1 * num2) / 100
-                    }
-                }
                 tempVal = findViewById(R.id.lblrespuesta);
                 tempVal.setText("respuesta: "+ respuesta);
 
