@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,58 +16,66 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    TabHost tbh;
     Button btn;
     TextView tempVal;
     Spinner spn;
-    EditText num1, num2;
+    conversores objConversores = new conversores();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btn = findViewById(R.id.btncalcular);
-        num1 = findViewById(R.id.txtNum1);
-        num2 = findViewById(R.id.txtNum2);
-        spn = findViewById(R.id.spnOpciones);
 
+        tbh = findViewById(R.id.tbhConversor);
+        tbh.setup();
+        tbh.addTab(tbh.newTabSpec("Moneda").setContent(R.id.tabMoneda).setIndicator("MONEDAS", null));
+        tbh.addTab(tbh.newTabSpec("Longitud").setContent(R.id.tabLongitud).setIndicator("LONGITUD", null));
+        tbh.addTab(tbh.newTabSpec("Tiempo").setContent(R.id.tabTiempo).setIndicator("TIEMPO", null));
+        tbh.addTab(tbh.newTabSpec("Almacenamiento").setContent(R.id.tabAlmacenamiento).setIndicator("ALMACENAMIENTO", null));
+        btn = findViewById(R.id.btnCalcular);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                tempVal = findViewById(R.id.txtNum1);
-                double num1 = Double.parseDouble(tempVal.getText().toString());
-                tempVal = findViewById(R.id.txtNum2);
-                double num2 = tempVal.isEnabled() ? Double.parseDouble(tempVal.getText().toString()) : 0;
-                double respuesta = 0.0;
-                String msg = "";
-                spn = findViewById(R.id.spnOpciones);
-                switch (spn.getSelectedItemPosition()){
-                    case 0:
-                        respuesta = num1 + num2;
-                        msg = "La suma es: "+ respuesta;
-                        break;
-                    case 1:
-                        respuesta = num1 - num2;
-                        msg = "La resta es: "+ respuesta;
-                        break;
-                    case 2:
-                        respuesta = num1 * num2;
-                        msg = "La multiplicacion es: "+ respuesta;
-                        break;
-                    case 3:
-                        respuesta = num1 / num2;
-                        msg = "La division: "+ respuesta;
-                        break;
-                }
+            public void onClick(View view) {
+                int opcion = tbh.getCurrentTab();
+                spn = findViewById(R.id.spnDeMonedas);
+                int de = spn.getSelectedItemPosition();
+                spn = findViewById(R.id.spnAMonedas);
+                int a = spn.getSelectedItemPosition();
+                tempVal = findViewById(R.id.textCantidad);
+                double cantidad = Double.parseDouble(tempVal.getText().toString());
 
-                tempVal = findViewById(R.id.lblrespuesta);
-                tempVal.setText("respuesta: "+ respuesta);
-                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
+                tempVal = findViewById(R.id.lblRespuesta);
+                double respuesta = objConversores.convertir(opcion, de, a, cantidad);
+                tempVal.setText("Respuesta: "+ respuesta);
 
 
             }
-        });
 
+        });
+    }
+
+    class conversores {
+        double[][] valores = {
+                {1, 0.98, 7.73, 25.45, 36.78, 508.87, 8.74},//monedas
+                {},//Longitud
+                {},//tiempo
+                {},//Almacenamiento
+
+        };
+
+        public double convertir(int opcion, int de, int a, double cantidad) {
+            return valores[opcion][a] / valores[opcion][de] * cantidad;
+        }
     }
 }
