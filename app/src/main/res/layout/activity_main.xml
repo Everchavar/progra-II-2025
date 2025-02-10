@@ -67,18 +67,157 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lblDeLongitud"
+                        android:text="DE: "
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <Spinner
+                        android:entries="@array/Longitud"
+                        android:id="@+id/spnDeLongitud"
+                        android:layout_below="@id/lblDeLongitud"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginTop="-20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/lblALongitud"
+                        android:text="A: "
+                        android:layout_below="@id/spnDeLongitud"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <Spinner
+                        android:entries="@array/Longitud"
+                        android:id="@+id/spnALongitud"
+                        android:layout_below="@id/spnDeLongitud"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
                 </RelativeLayout>
                 <RelativeLayout
                     android:id="@+id/tabTiempo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lblDeTiempo"
+                        android:text="DE: "
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <Spinner
+                        android:entries="@array/Tiempo"
+                        android:id="@+id/spnDeTiempo"
+                        android:layout_below="@id/lblDeTiempo"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginTop="-20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/lblATiempo"
+                        android:text="A: "
+                        android:layout_below="@id/spnDeTiempo"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <Spinner
+                        android:entries="@array/Tiempo"
+                        android:id="@+id/spnATiempo"
+                        android:layout_below="@id/spnDeTiempo"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
                 </RelativeLayout>
+
+
                 <RelativeLayout
                     android:id="@+id/tabAlmacenamiento"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lblDeAlmacenamiento"
+                        android:text="DE: "
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <Spinner
+                        android:entries="@array/Almacenamiento"
+                        android:id="@+id/spnDeAlmacenamiento"
+                        android:layout_below="@id/lblDeAlmacenamiento"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginTop="-20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/lblAAlmacenamiento"
+                        android:text="A: "
+                        android:layout_below="@id/spnDeAlmacenamiento"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <Spinner
+                        android:entries="@array/Almacenamiento"
+                        android:id="@+id/spnAAlmacenamiento"
+                        android:layout_below="@id/spnDeAlmacenamiento"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/tabTransferencia"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lblDeTransferencia"
+                        android:text="DE: "
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <Spinner
+                        android:entries="@array/Transferencia"
+                        android:id="@+id/spnDeTransferencia"
+                        android:layout_below="@id/lblDeTransferencia"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginTop="-20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/lblATransferencia"
+                        android:text="A: "
+                        android:layout_below="@id/spnDeTransferencia"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <Spinner
+                        android:entries="@array/Transferencia"
+                        android:id="@+id/spnATransferencia"
+                        android:layout_below="@id/spnDeTransferencia"
+                        android:layout_marginLeft="80dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
                 </RelativeLayout>
             </FrameLayout>
         </LinearLayout>
