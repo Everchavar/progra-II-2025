@@ -58,19 +58,19 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     int opcion = tbh.getCurrentTab();
 
-                    if (opcion == 0) { // Monedas
+                    if (opcion == 0) {
                         spnDe = findViewById(R.id.spnDeMonedas);
                         spnA = findViewById(R.id.spnAMonedas);
-                    } else if (opcion == 1) { // Longitud
+                    } else if (opcion == 1) {
                         spnDe = findViewById(R.id.spnDeLongitud);
                         spnA = findViewById(R.id.spnALongitud);
-                    } else if (opcion == 2) { // Tiempo
+                    } else if (opcion == 2) {
                         spnDe = findViewById(R.id.spnDeTiempo);
                         spnA = findViewById(R.id.spnATiempo);
-                    } else if (opcion == 3) { // Almacenamiento
+                    } else if (opcion == 3) {
                         spnDe = findViewById(R.id.spnDeAlmacenamiento);
                         spnA = findViewById(R.id.spnAAlmacenamiento);
-                    } else if (opcion == 4) { // Transferencia de Datos
+                    } else if (opcion == 4) {
                         spnDe = findViewById(R.id.spnDeTransferencia);
                         spnA = findViewById(R.id.spnATransferencia);
                     }
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                         spnDe = findViewById(R.id.spnDeMasa);
                         spnA = findViewById(R.id.spnAMasa);
                     }
-                    else if (opcion == 6) { // Volumen
+                    else if (opcion == 6) {
                         spnDe = findViewById(R.id.spnDeVolumen);
                         spnA = findViewById(R.id.spnAVolumen);
                     }
@@ -87,32 +87,32 @@ public class MainActivity extends AppCompatActivity {
                     int de = spnDe.getSelectedItemPosition();
                     int a = spnA.getSelectedItemPosition();
 
-                    // Validar que el campo no esté vacío
+
                     String cantidadTexto = textCantidad.getText().toString().trim();
                     if (cantidadTexto.isEmpty()) {
                         Toast.makeText(MainActivity.this, "⚠ Ponga un numero no sea imbecil", Toast.LENGTH_SHORT).show();
                         return;
                     }
 
-                    // Convertir el texto a número
+
                     double cantidad = Double.parseDouble(cantidadTexto);
 
-                    // Validar que el número ingresado sea positivo
+
                     if (cantidad < 0) {
                         Toast.makeText(MainActivity.this, "⚠ Ingrese un número positivo", Toast.LENGTH_SHORT).show();
                         return;
                     }
 
-                    // Validar que no sean la misma unidad de origen y destino
+
                     if (de == a) {
                         Toast.makeText(MainActivity.this, "⚠ Seleccione diferentes unidades", Toast.LENGTH_SHORT).show();
                         return;
                     }
 
-                    // Realizar la conversión
+
                     double respuesta = objConversores.convertir(opcion, de, a, cantidad);
 
-                    // Mostrar la respuesta en un Toast y en la pantalla
+
                     Toast.makeText(MainActivity.this, "✅ Conversión: " + respuesta, Toast.LENGTH_LONG).show();
                     lblRespuesta.setText("Respuesta: " + respuesta);
 
