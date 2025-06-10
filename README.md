@@ -1,2 +1,2 @@
-# progra-II-2025
-Repositorio de Android estudios ciclo 2025 
+# prograII-semi-2025
+Códigos de la clase de programación computacional II
